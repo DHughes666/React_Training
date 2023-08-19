@@ -4,7 +4,7 @@ import App from "./components/App.jsx";
 
 ReactDOM.render(
   <div>
-    <h1>My Contacts</h1>
+    <h1 className="heading">My Contacts</h1>
     <App />
 
   </div>,
