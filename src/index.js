@@ -1,12 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./components/App.jsx";
 
-ReactDOM.render(
-  <div>
-    <h1 className="heading">My Contacts</h1>
-    <App />
-
-  </div>,
-  document.getElementById("root")
-);
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
