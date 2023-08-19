@@ -3,11 +3,21 @@ import Card from './Card.jsx';
 import contacts from '../contacts.js';
 import Avatar from "./Avatar.jsx";
 
+function createCard(contact) {
+    return <Card name={contact.name} 
+        img = {contact.imgURL}
+        tel = {contact.tel}
+        email = {contact.email}
+    />;
+}
+
 function App() {
     return <div>
     <h1 className="heading">My Contacts</h1>
-    <Avatar img="https://pbs.twimg.com/profile_images/1497392721803284480/_VHZjROl_400x400.jpg" />
-    <Card 
+    
+    {contacts.map(createCard)}
+
+    {/* <Card 
         name= {contacts[0].name}
         img= {contacts[0].imgURL}
         tel= {contacts[0].tel}
@@ -26,7 +36,7 @@ function App() {
         img= {contacts[2].imgURL}
         tel= {contacts[2].tel}
         email= {contacts[2].email}
-    />
+    /> */}
 
    
 
