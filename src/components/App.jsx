@@ -1,45 +1,52 @@
 import React from "react";
-import Entry from "./Entry";
-import emojipedia from "../emojipedia";
+import Card from './Card.jsx';
+import contacts from '../contacts.js';
+import Avatar from "./Avatar.jsx";
 
-// function createEntry(emojiTerm) {
-//   return (
-//     <Entry
-//       key={emojiTerm.id}
-//       emoji={emojiTerm.emoji}
-//       name={emojiTerm.name}
-//       description={emojiTerm.meaning}
-//     />
-//   );
-// }
-
-// const createEntry = ((emojiTerm) => {
-//   <Entry
-//       key={emojiTerm.id}
-//       emoji={emojiTerm.emoji}
-//       name={emojiTerm.name}
-//       description={emojiTerm.meaning}
-//     />
-// })
+function createCard(contact) {
+    return (
+    <Card 
+        id = {contact.id}
+        key = {contact.id}
+        name= {contact.name} 
+        img = {contact.imgURL}
+        tel = {contact.tel}
+        email = {contact.email}
+    />
+    );
+}
 
 function App() {
-  return (
-    <div>
-      <h1>
-        <span>emojipedia</span>
-      </h1>
-      <dl className="dictionary">{emojipedia.map(emojiTerm => (
-        <Entry
-          key={emojiTerm.id}
-          emoji={emojiTerm.emoji}
-          name={emojiTerm.name}
-          description={emojiTerm.meaning}
+    return <div>
+    <h1 className="heading">My Contacts</h1>
+    
+    {contacts.map(createCard)}
+
+    {/* <Card 
+        name= {contacts[0].name}
+        img= {contacts[0].imgURL}
+        tel= {contacts[0].tel}
+        email= {contacts[0].email}
     />
-      ))
-      }
-      </dl>
+
+    <Card 
+        name= {contacts[1].name}
+        img= {contacts[1].imgURL}
+        tel= {contacts[1].tel}
+        email= {contacts[1].email}
+    />
+
+    <Card 
+        name= {contacts[2].name}
+        img= {contacts[2].imgURL}
+        tel= {contacts[2].tel}
+        email= {contacts[2].email}
+    /> */}
+
+   
+
+   
     </div>
-  );
 }
 
 export default App;
