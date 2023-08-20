@@ -4,11 +4,16 @@ import contacts from '../contacts.js';
 import Avatar from "./Avatar.jsx";
 
 function createCard(contact) {
-    return <Card name={contact.name} 
+    return (
+    <Card 
+        id = {contact.id}
+        key = {contact.id}
+        name= {contact.name} 
         img = {contact.imgURL}
         tel = {contact.tel}
         email = {contact.email}
-    />;
+    />
+    );
 }
 
 function App() {
