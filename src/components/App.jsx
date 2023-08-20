@@ -1,52 +1,30 @@
 import React from "react";
-import Card from './Card.jsx';
-import contacts from '../contacts.js';
-import Avatar from "./Avatar.jsx";
+import Emoticon from "./Emoticon.jsx";
+import emojipedia from "../emojipedia";
 
-function createCard(contact) {
+function createEmo(emo) {
     return (
-    <Card 
-        id = {contact.id}
-        key = {contact.id}
-        name= {contact.name} 
-        img = {contact.imgURL}
-        tel = {contact.tel}
-        email = {contact.email}
-    />
-    );
+        <Emoticon 
+            key = {emo.id}
+            emoji = {emo.emoji}
+            name = {emo.name}
+            meaning = {emo.meaning}
+        />
+    )
 }
 
 function App() {
-    return <div>
-    <h1 className="heading">My Contacts</h1>
-    
-    {contacts.map(createCard)}
+  return (
+    <div>
+      <h1>
+        <span>emojipedia</span>
+      </h1>
 
-    {/* <Card 
-        name= {contacts[0].name}
-        img= {contacts[0].imgURL}
-        tel= {contacts[0].tel}
-        email= {contacts[0].email}
-    />
-
-    <Card 
-        name= {contacts[1].name}
-        img= {contacts[1].imgURL}
-        tel= {contacts[1].tel}
-        email= {contacts[1].email}
-    />
-
-    <Card 
-        name= {contacts[2].name}
-        img= {contacts[2].imgURL}
-        tel= {contacts[2].tel}
-        email= {contacts[2].email}
-    /> */}
-
-   
-
-   
+      <dl className="dictionary">
+        {emojipedia.map(createEmo)}
+      </dl>
     </div>
+  );
 }
 
 export default App;
