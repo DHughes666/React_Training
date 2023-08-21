@@ -1,12 +1,16 @@
 import React from "react";
 import cars from "../practice";
 
+
 const [honda, tesla] = cars
 
-const {model, coloursByPopularity, speedStats} = honda 
-const {topSpeed: hondaTopSpeed, zeroToSixty} = speedStats
+// const {model, coloursByPopularity, speedStats} = honda 
+// const {topSpeed: hondaTopSpeed, zeroToSixty} = speedStats
 
-const [hondaTopColour, hondaColour] = coloursByPopularity
+const {models, coloursByPopularity, 
+  speedStats: {topSpeed: hondaTopSpeed}} = honda
+
+  const [hondaTopColour, hondaColour] = coloursByPopularity
 
 
 console.log(honda);
@@ -18,6 +22,9 @@ console.log("---------------------------------------");
 const {model: modelT, coloursByPopularity: Tcol, speedStats: Tsped} = tesla
 const {topSpeed: teslaTopSpeed, zeroToSixty: teslaZeroToSixty} = Tsped
 const [teslaTopColour, teslaColour] = Tcol
+
+console.log(hondaTopSpeed);
+console.log(tesla);
 
 
 
