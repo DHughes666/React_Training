@@ -1,21 +1,21 @@
 import React from "react";
 import Hi from "./Header";
-import Formy from "./Form";
+import Login from "./Form";
 
 let isLoggedIn = false;
 
-function renderConditionally(){
-  if (isLoggedIn) {
-    return <Hi />
-  } else {
-    return <Formy />
-  }
-}
+// function renderConditionally(){
+//   if (isLoggedIn) {
+//     return <Hi />
+//   } else {
+//     return <Login />
+//   }
+// }
 
 function App() {
   return (
     <div className="container">
-      {renderConditionally()}
+      {isLoggedIn ? <Hi /> : <Login />}
     </div>
   );
 }
