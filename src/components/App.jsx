@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 function App() {
-  const [contact, setContact] = useState({
-    fName: "",
-    lName: "",
-    email: ""
-  });
+
+  const [fName, setfName] = useState("");
+  const [lName, setlName] = useState("");
+
+  function updateFName(event){
+    setfName(event.target.value);
+  }
+
+  function updatedLName(event) {
+    setlName(event.target.value);
+  }
 
   return (
     <div className="container">
-      <h1>
-        Hello {contact.fName} {contact.lName}
-      </h1>
-      <p>{contact.email}</p>
+      <h1>Hello {fName} {lName} </h1>
       <form>
-        <input name="fName" placeholder="First Name" />
-        <input name="lName" placeholder="Last Name" />
-        <input name="email" placeholder="Email" />
+        <input 
+        onChange={updateFName} 
+        name="fName" placeholder="First Name" value={fName}
+        />
+        <input 
+        onChange={updatedLName}
+        name="lName" placeholder="Last Name" value={lName}/>
         <button>Submit</button>
       </form>
     </div>
