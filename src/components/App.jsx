@@ -12,10 +12,15 @@ let isLoggedIn = false;
 //   }
 // }
 
+let currTime = new Date().getHours();
+console.log(currTime);
+
 function App() {
   return (
     <div className="container">
-      {isLoggedIn ? <Hi /> : <Login />}
+      {/* {isLoggedIn ? <Hi /> : <Login />} */}
+      {currTime > 13? <h1>Why are you still working</h1>:
+      <h1>Keep Working</h1>}
     </div>
   );
 }
