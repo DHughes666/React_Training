@@ -1,6 +1,18 @@
 import React from "react";
 import cars from "../practice";
+import animals, {useAnimals} from "../data";
 
+
+function App() {
+
+const [cat, dog] = animals;
+
+console.log(useAnimals(dog));
+const [animal, makesound] = useAnimals(cat);
+console.log(animal);
+makesound();
+
+console.log("--------------------------------");
 
 const [honda, tesla] = cars
 
@@ -26,28 +38,26 @@ const [teslaTopColour, teslaColour] = Tcol
 console.log(hondaTopSpeed);
 console.log(tesla);
 
+  // return (
+  //   <table>
+  //     <tr>
+  //       <th>Brand</th>
+  //       <th>Top Speed</th>
+  //     </tr>
+  //     <tr>
+  //       <td>{tesla.model}</td>
+  //       <td>{teslaTopSpeed}</td>
+  //       <td>{teslaTopColour}</td>
+  //     </tr>
+  //     <tr>
+  //       <td>{honda.model}</td>
+  //       <td>{hondaTopSpeed}</td>
+  //       <td>{hondaTopColour}</td>
+  //     </tr>
+  //   </table>
+  // )
 
-
-function App() {
-
-  return (
-    <table>
-      <tr>
-        <th>Brand</th>
-        <th>Top Speed</th>
-      </tr>
-      <tr>
-        <td>{tesla.model}</td>
-        <td>{teslaTopSpeed}</td>
-        <td>{teslaTopColour}</td>
-      </tr>
-      <tr>
-        <td>{honda.model}</td>
-        <td>{hondaTopSpeed}</td>
-        <td>{hondaTopColour}</td>
-      </tr>
-    </table>
-  )
+  return <h1>Hi</h1>
 
  
 }
