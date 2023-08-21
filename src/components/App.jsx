@@ -1,26 +1,13 @@
 import React from "react";
-import Hi from "./Header";
-import Login from "./Form";
+import Login from "./Login";
+import Register from "./Register";
 
-let isLoggedIn = false;
-
-// function renderConditionally(){
-//   if (isLoggedIn) {
-//     return <Hi />
-//   } else {
-//     return <Login />
-//   }
-// }
-
-let currTime = new Date().getHours();
-console.log(currTime);
+var userIsRegistered = false;
 
 function App() {
   return (
     <div className="container">
-      {/* {isLoggedIn ? <Hi /> : <Login />} */}
-      {currTime > 13? <h1>Why are you still working</h1>:
-      <h1>Keep Working</h1>}
+      {userIsRegistered ? <Login /> : <Register />}
     </div>
   );
 }

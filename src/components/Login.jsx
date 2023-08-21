@@ -1,20 +1,24 @@
 import React from "react";
 import Input from "./Input";
+import Button from "./Button";
 
 function Login(){
-    return (
+    return(
         <form className="form">
         <Input 
-           type="text"
-           placeholder="Username" 
+            type="text"
+            placeholder="Username"
         />
         <Input 
             type="password"
-            placeholder="Password" 
+            placeholder="Password"
         />
-        <button type="submit">Login</button>
-      </form>
+        <Button 
+            butName="Login"
+        />
+        </form>
     )
+    
 }
 
 export default Login;
