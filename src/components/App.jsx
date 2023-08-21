@@ -1,23 +1,48 @@
-import React, {useState} from "react";
+import React from "react";
+import cars from "../practice";
+
+const [honda, tesla] = cars
+
+const {model, coloursByPopularity, speedStats} = honda 
+const {topSpeed: hondaTopSpeed, zeroToSixty} = speedStats
+
+const [hondaTopColour, hondaColour] = coloursByPopularity
+
+
+console.log(honda);
+console.log(hondaTopColour);
+console.log(hondaTopSpeed);
+
+console.log("---------------------------------------");
+
+const {model: modelT, coloursByPopularity: Tcol, speedStats: Tsped} = tesla
+const {topSpeed: teslaTopSpeed, zeroToSixty: teslaZeroToSixty} = Tsped
+const [teslaTopColour, teslaColour] = Tcol
+
+
 
 function App() {
 
-  setInterval(updateTime, 1000);
-  const now = new Date().toLocaleTimeString();
-
-  const [time, setTime] = useState(now);
-
-  function updateTime() {
-    const newTime = new Date().toLocaleTimeString();
-    setTime(newTime);
-  }
-
   return (
-    <div className="container">
-      <h1>{time}</h1>
-      <button onClick={updateTime}>Get Time</button>
-    </div>
+    <table>
+      <tr>
+        <th>Brand</th>
+        <th>Top Speed</th>
+      </tr>
+      <tr>
+        <td>{tesla.model}</td>
+        <td>{teslaTopSpeed}</td>
+        <td>{teslaTopColour}</td>
+      </tr>
+      <tr>
+        <td>{honda.model}</td>
+        <td>{hondaTopSpeed}</td>
+        <td>{hondaTopColour}</td>
+      </tr>
+    </table>
   )
+
+ 
 }
 
 export default App;
