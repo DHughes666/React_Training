@@ -5,14 +5,15 @@ function TodoItem(props){
     const [isDone, setIsDone] = useState(false);
 
     function handleClick(){
-        setIsDone((preValue) => {
-            return !preValue;
-        });
+        
     }
 
     return (
-        <div onClick={handleClick}>
-            <li style={{textDecoration: isDone ? "line-through": "none"}}>
+        <div onClick={() => {
+            props.onChecked(props.id)
+        }           
+        }>
+            <li >
                 {props.Text}
             </li>
         </div>
