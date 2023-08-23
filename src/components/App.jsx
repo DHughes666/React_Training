@@ -13,7 +13,7 @@ function App() {
     setContact((preValue) => {
       return {
         ...preValue,
-        name: value
+        [name]: value
       }
     })
   }
