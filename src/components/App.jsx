@@ -3,19 +3,13 @@ import TodoItem from "./TodoItem.jsx";
 import InputArea from "./InputArea.jsx";
 
 function App() {
-  const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
 
-  function handleChange(event) {
-    const newValue = event.target.value;
-    setInputText(newValue);
-  }
-
-  function addItem() {
+  function addItem(inputText) {
     setItems(prevItems => {
       return [...prevItems, inputText];
     });
-    setInputText("");
+    
   }
 
   function deleteItem(id) {
@@ -32,9 +26,8 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <InputArea 
-        handleChange= {handleChange}
-        inputText= {inputText}
-        addItem= {addItem}
+        addItem = {addItem}
+
       />
       <div>
         <ul>
