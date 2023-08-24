@@ -27,7 +27,7 @@ function App() {
       </div>
       <InputArea 
         addItem = {addItem}
-
+ 
       />
       <div>
         <ul>
